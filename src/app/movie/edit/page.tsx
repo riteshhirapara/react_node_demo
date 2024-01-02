@@ -22,7 +22,7 @@ const fileObject = {
   name: "",
 };
 
-const page = (props: Props) => {
+const Page = (props: Props) => {
   const router = useRouter();
   const [data, setData] = useState({ title: "", publish_year: "", poster: "" });
   const [loading, setLoading] = useState(true);
@@ -226,4 +226,4 @@ const page = (props: Props) => {
   );
 };
 
-export default page;
+export default Page;

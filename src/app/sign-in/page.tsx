@@ -8,7 +8,7 @@ import { showToast } from "@/lib/utils";
 
 type Props = {};
 
-const page = (props: Props) => {
+const Page = (props: Props) => {
   const router = useRouter();
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -144,4 +144,4 @@ const page = (props: Props) => {
   );
 };
 
-export default page;
+export default Page;
