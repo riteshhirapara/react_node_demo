@@ -1,10 +1,10 @@
 "use client";
-import Card from "@/app/components/card/page";
-import Header from "@/app/components/header/page";
+import Card from "@/app/components/card";
+import Header from "@/app/components/header";
 import React from "react";
 import { useEffect, useState } from "react";
 
-export default function movieList() {
+export default function MovieList() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

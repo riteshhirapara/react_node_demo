@@ -18,7 +18,7 @@ const fileObject = {
   name: "",
 };
 
-const page = (props: Props) => {
+const Page = (props: Props) => {
   const router = useRouter();
   const [file, setFile] = useState<FileType>(fileObject);
   const [originalFile, setOriginalFile] = useState({});
@@ -172,4 +172,4 @@ const page = (props: Props) => {
   );
 };
 
-export default page;
+export default Page;
