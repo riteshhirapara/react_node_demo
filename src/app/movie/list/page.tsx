@@ -1,6 +1,7 @@
 "use client";
 import Card from "@/app/components/card";
 import Header from "@/app/components/header";
+import axios from "axios";
 import React from "react";
 import { useEffect, useState } from "react";
 
@@ -11,18 +12,17 @@ export default function MovieList() {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const response = await fetch("http://localhost:3000/api/movie");
-        if (!response.ok) {
+      await axios
+        .get("/api/movie")
+        .then((data) => {
+          setData(data?.data.movies);
+          setLoading(false);
+        })
+        .catch((error) => {
+          setError(error.message);
+          setLoading(false);
           throw new Error("Failed to fetch data");
-        }
-        const result = await response.json();
-        setData(result.movies);
-        setLoading(false);
-      } catch (error: any) {
-        setError(error.message);
-        setLoading(false);
-      }
+        });
     };
 
     fetchData();

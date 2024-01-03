@@ -57,7 +57,7 @@ const Page = (props: Props) => {
       formData.append("publish_year", publishingYear);
       formData.append("poster", originalFile as Blob);
       const response = await axios
-        .post("http://localhost:3000/api/movie", formData, {
+        .post("/api/movie", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },

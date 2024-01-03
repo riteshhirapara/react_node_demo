@@ -70,7 +70,7 @@ const Page = (props: Props) => {
     if (!currentImage) formData.append("poster", originalFile as Blob);
 
     const response = await axios
-      .patch("http://localhost:3000/api/movie", formData, {
+      .patch("/api/movie", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -86,7 +86,7 @@ const Page = (props: Props) => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios
-        .get("http://localhost:3000/api/movie", {
+        .get("/api/movie", {
           params: {
             id,
           },
